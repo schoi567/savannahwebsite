@@ -44,11 +44,29 @@ export class CareersComponent {
   Production() {this.findAndScrollToWord("Production"); this.showProductionInfo= true;  setTimeout(() => {
     this.showProductionInfo = false;
   }, 1000);}
+
+  ProductionControl() {this.findAndScrollToWord("Production Control"); this.showProductionInfo= true;  setTimeout(() => {
+    this.showProductionInfo = false;
+  }, 1000);}
+
  
   HR() {this.findAndScrollToWord("HR"); this.showHRInfo= true;  setTimeout(() => {
     this.showHRInfo = false;
   }, 1000);}
  
+
+
+  Assembly() {this.findAndScrollToWord("Assembly"); this.showHRInfo= true;  setTimeout(() => {
+    this.showHRInfo = false;
+  }, 1000);}
+
+  Injection() {this.findAndScrollToWord("Injection"); this.showHRInfo= true;  setTimeout(() => {
+    this.showHRInfo = false;
+  }, 1000);}
+
+  Engineering(){this.findAndScrollToWord("Engineering"); this.showHRInfo= true;  setTimeout(() => {
+    this.showHRInfo = false;
+  }, 1000);}
 
 
 @ViewChild('scrollToElement', { static: true }) scrollToElement!: ElementRef;
