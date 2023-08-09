@@ -1,0 +1,84 @@
+/* Reset default styles for the list */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Style the dropdown container */
+.dropdown {
+  
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  display: inline-block;
+}
+
+/* Style the dropdown button */
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  width: 300px;
+}
+
+/* Style the dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Style the dropdown links */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Show the dropdown content when the button is hovered over */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
+      
+      div.logo {
+        margin-top: 200px;
+        width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+
+    }
+ 
+
+    div.dropdownlocator {
+      position: relative;
+       
+      margin-top: 20px;
+      width: 40%;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+
+  }
+
+  div.information {
+    z-index: -1;
+    
+
+
+  } 

@@ -1,0 +1,14 @@
+.groundbreaking{
+    text-align:center
+
+}
+
+.image-container {
+    margin: 0 auto;
+    width: 900px; /* Set the desired width */
+  }
+
+  .image-container img {
+    width: 100%; /* Make the image take up 100% of its container's width */
+    height: auto; /* Automatically adjust the height to maintain aspect ratio */
+  }
