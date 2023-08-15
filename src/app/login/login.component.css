@@ -1,0 +1,62 @@
+.space { margin-top: 3px; }
+.space1 { margin-top: 4px; }
+.space2 { margin-top: 10px; }
+.center {
+  position: relative;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  text-align: center;
+}
+
+.center1 {
+  position: relative;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  text-align: center;
+}
+.block {
+  position: relative;
+  border-radius: 5px;
+  margin: auto;
+  display: block;
+  border: none;
+  background-color: #15bb7e;
+  padding: 10px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+
+
+.block1 {
+  position: relative;
+  border-radius: 5px;
+  margin: auto;
+  display: block;
+  border: none;
+  background-color: #7466ac;
+  padding: 10px 19.5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+
+ 
+label {
+  display: inline-block;
+  width: 250px;
+  text-align: center;
+}
+
+label.resume {
+  display: inline-block;
+  width: 250px;
+  text-align: right;
+  margin-left: 0%;
+}
+
+input.bd {
+  margin-left: 80px;
+}

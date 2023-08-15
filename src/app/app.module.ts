@@ -9,8 +9,10 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { EventsComponent } from './events/events.component';
 import { ContactsComponent } from './contacts/contacts.component';
- 
-
+import { LoginComponent } from './login/login.component';
+import { ServiceService } from './service/service.service'; 
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,11 +24,18 @@ import { ContactsComponent } from './contacts/contacts.component';
     FooterComponent,
     EventsComponent,
     ContactsComponent,
+    LoginComponent,
+ 
+ 
  
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    
+
   ],
   providers: [],
   bootstrap: [AppComponent]

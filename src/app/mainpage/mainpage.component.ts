@@ -17,7 +17,7 @@ export class MainpageComponent implements OnInit {
   ngOnInit(): void {
     
     this.router.navigate([""]);
-    alert("Welcome to Seoyon E-Hwa Savannah!");
+   
 }
 
  

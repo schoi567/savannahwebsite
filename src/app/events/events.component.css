@@ -5,7 +5,9 @@
 
 .image-container {
     margin: 0 auto;
-    width: 900px; /* Set the desired width */
+    width: 400px; /* Set the desired width */
+
+
   }
 
   .image-container img {

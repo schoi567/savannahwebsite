@@ -49,4 +49,9 @@ footer {
     text-align: center;
     padding: 10px;
 }
- 
+
+div.bd {
+    margin-left: 20%;   
+    margin-right: 20%;  
+
+}

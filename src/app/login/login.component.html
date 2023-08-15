@@ -1,0 +1,63 @@
+  <div class="center">
+    <h1>Please fill your information</h1>
+    
+    <form (ngSubmit)="Submit()">
+
+<!--
+  firstname?: any;
+  lastname?: any;
+  department?: any;
+  resume?: File;
+  email?: any;
+
+-->
+
+    <label>First Name: &nbsp;</label><input type="text" name="firstname"  placeholder="First Name" [(ngModel)]="applicants.firstname">
+    <div class="space2"></div>
+
+    <label>Last Name: &nbsp;</label> <input type="text" name="lastname" placeholder="Last Name" [(ngModel)]="applicants.lastname">
+    <div class="space2"></div>
+
+    <label>E-Mail: &nbsp;</label> <input type="text" name="email" placeholder="E-Mail" [(ngModel)]="applicants.email">
+    <div class="space2"></div>
+
+    <label>Choose a department:</label>
+    <select id="department" name="department" [(ngModel)]="applicants.department">
+      <option value="Assembly">Assembly</option>
+      <option value="Development">Development</option>
+      <option value="Engineering">Engineering</option>
+      <option value="Finance">Finance</option>
+      <option value="HR">Human Resource</option>
+      <option value="Injection">Injection</option>
+      <option value="Production">Production</option>
+      <option value="PC">Production Control</option>
+
+    </select>
+
+    <div class="space2"></div>
+    <label class="resume">Resume:&nbsp;&nbsp;</label> <input class="bd" type="file" name="myfile" [(ngModel)]="applicants.resume" >
+   
+    <div class="space2"></div>
+    <div class="alert alert-danger" *ngIf='invalidform'>{{errormessage}}</div>
+
+       <div class="space2"></div>     
+       <div class="space2"></div>
+       <div class="space2"></div>
+
+  <hr width="40%" color =#ADD8E6 size="3"  align="center">
+
+      <input type="submit" value = "Submit" class="block">
+  
+  
+    </form>
+
+
+ 
+
+
+
+
+
+</div>
+
+

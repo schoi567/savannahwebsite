@@ -1,37 +1,18 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-header {
-    background-color: #1004b1;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-
-main {
-    padding: 20px;
-}
-section {
-    margin-bottom: 30px;
-}
-
-
-.headings {
-    text-align: center;
-
-}
-
-
-.facilitysite {
-    width: 75%;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    max-width: 100%;
-   
+ div.facilitysite {
+  
+    margin-left: 20%;   
+    margin-right: 20%; 
+    
 }
 
  
+
+h1 {
+    text-align: center;
+}
+
+.inline-img {
+    max-width: 90%; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the image horizontally */
+    display: block;
+}
