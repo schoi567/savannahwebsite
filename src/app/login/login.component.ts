@@ -4,14 +4,15 @@ import { Injectable } from '@angular/core';
 import { ServiceService } from '../service/service.service';
 import { HttpClient } from '@angular/common/http';
 
+ 
 
 export interface applicants {
   id?: number;
   firstname?: string;
   lastname?: string;
   email?: string;
-  department?: string;
-  resume?: File | undefined;
+  departments?: string;
+  resume?: string;
  
 
  }
@@ -23,8 +24,8 @@ export class allapplicants  {constructor(
  public firstname: string,
  public lastname: string,
  public email: string,
- public department: string,
- public resume: File | undefined
+ public departments: string,
+ public resume: string
  
  
 ) {}
@@ -38,54 +39,73 @@ export class allapplicants  {constructor(
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  invalidLogin = false;
+  errorMessage = '';
   applicants: applicants = {      };
   allapplicants: allapplicants[] = [];
 
   errormessage?: any;
- 
+  uploadMessage?: string;
+
   invalidform = false;
   
-
+  selectedFile: File | null = null;
 
   constructor (private router: Router, private ServiceService: ServiceService, private http: HttpClient) { }
  
+  ngOnInit(): void {console.log("BD")}
+ 
+Submit1() {
+  this.invalidform = false; // Reset the flag before checking fields
+
+  if (!this.applicants.firstname) {
+    this.errorMessage = "Please fill out your first name";
+    this.invalidform = true;
+  }
+
+  if (!this.applicants.lastname) {
+    this.errorMessage = "Please fill out your last name";
+    this.invalidform = true;
+  }
+
+  if (!this.applicants.email) {
+    this.errorMessage = "Please fill out your email";
+    this.invalidform = true;
+  }
+
+  if (!this.applicants.resume) {
+    this.errorMessage = "Please attach your resume";
+    this.invalidform = true;
+  }
+
+  if (!this.invalidform) {
+    this.ServiceService.applicants(this.applicants).subscribe(
+      response => {
+        console.log('Thank you for your interest', response);
+        alert('Thank you for your interest');
+        this.router.navigate(["thankyou"]);
+        console.log(this.applicants);
+      },
+      error => {
+        console.error('not uploaded', error);
+      }
+    );
+  }
+}
+
+
+
+
+
+
+ 
  
 
-  upload(file: File) {const formData = new FormData();
-    formData.append('file', file);
-    return this.http.post('assets/Resume', formData); }
+}
 
- Submit() {
- if (this.applicants.resume) {
-      this.upload(this.applicants.resume).subscribe(
-        response => {
-          console.log('File uploaded successfully:', response);
-        },
-        error => {
-          console.error('Error uploading file:', error);
-        }
-      );
-    }
 
-  }
 
-  
 
-  /*
 
-     console.log(this.applicants.firstname); 
-  console.log(this.applicants.lastname); 
-  console.log(this.applicants.department); 
-  console.log(this.applicants.resume); 
-  console.log(this.applicants.email); 
-
-  
-  */
-  
-  
-  ngOnInit(): void {console.log("BD")}
-
-  }
-
-  
+ 
  

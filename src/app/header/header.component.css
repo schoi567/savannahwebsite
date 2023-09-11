@@ -12,11 +12,7 @@ div.header { z-index: 1;
 
 }
 
-div.header1 { z-index: 1;
-  
-    padding: 10px;
-    text-align: left;
-}
+
 
 nav.nav {
     background-color: #f0d401;
@@ -24,11 +20,7 @@ nav.nav {
     text-align: center;
 }
 
-nav.nav1 {
-    background-color: #f0d401;
-    padding: 10px 0;
-     
-}
+
 
 
 nav ul {
@@ -54,8 +46,10 @@ nav a {
     padding: 5px 10px;
 }
 
- 
-
+.header-placeholder {
+    display: none;
+    height: 0;
+}
 
 
 
@@ -75,15 +69,7 @@ nav a:hover {
 div.header
 {   top: 0px; 
     position: fixed;
- 
-    z-index: 1;
- 
-    width: 100%;
-}
-div.header1
-{   top: 0px; 
-    position: fixed;
- 
+    height: 60px;
     z-index: 1;
  
     width: 100%;
@@ -101,25 +87,27 @@ div.header1
     color: #030000; 
     padding: 5px;
     border-radius: 3px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 3px;
+    font-size: 16px;
+
   }
-  
-  /* Style for the options */
+  /*
+  // Style for the options 
   .menu option {
     text-align: left;
     color: #333;
     padding: 5px;
   }
   
-  /* Style for the selected option */
+  // Style for the selected option 
   .menu option:checked {
     text-align: left;
      
   }
 
-
-
-
-
+ */ 
 @media (max-width: 960px) {
   nav ul     { display: none; }
   nav select { display: inline-block; }
@@ -127,17 +115,89 @@ div.header1
   nav.nav { display: none; }
 
 
+  
 }
 
+ 
+body {
+    overflow-y: auto;
+}
+@media (max-width: 960px) {
+    .header-placeholder {
+        display: block;
+        height: 60px;
+    }
+    .main-content {
+        margin-left: 100px; /* same width as vertical-nav */
+    }
+    .logo {
+        width: 50%;
+        margin-left: 40%;
+        margin-right: 60%;
+        display: block;
+        
+    }
+
+
+}
+
+ 
 
 @media (min-width: 960px) {
     nav select { display: none; }
-  div.header1  { display: none; }
-  nav.nav1{ display: none; }
+
   }
   
   
-
+/*    ********* */
 
 
  
+
+  .vertical-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100px; /* or any desired width */
+    height: 100%;
+    background-color: #f0d401;
+    overflow-y: auto;
+}
+
+.vertical-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.vertical-nav li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.vertical-nav li:hover {
+    background-color: #ccc;
+}
+
+@media (max-width: 960px) {
+    .vertical-nav {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav select {
+        display: none;
+    }
+
+    div.header {
+        display: none;
+    }
+
+    nav.nav {
+        display: none;
+    }
+}

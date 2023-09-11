@@ -1,18 +1,19 @@
-<div class ="header">    
+<div class ="header"> 
+    <div class="header-placeholder"></div>   
     <nav class="nav">
       
         <ul  >
-            <li><a (click)="homepage()">Home </a></li>
-            <li><a (click)="about()">About</a></li>
-            <li><a (click)="contacts()">Contact</a></li>
-            <li><a (click)="careers()">Careers</a></li>
-            <li><a (click)="events()">Events</a></li>    
+            <li><a (click)="homepage()"><b>Home</b> </a></li>
+            <li><a (click)="about()"><b>Company Overview</b></a></li>
+            <li><a (click)="contacts()"><b>Contacts</b></a></li>
+            <li><a (click)="careers()"><b>Job Postings</b></a></li>
+            <li><a (click)="events()"><b>Events</b></a></li>   
+           <!-- <li><a (click)="login()">Application</a></li>  --> 
         </ul>
     </nav>
 </div>
 
-
-<div class ="header1">    
+<!--    <div class ="header1">    
     <nav class="nav1">
         <select class="menu" (change)="onOptionSelected($event)"> 
             <option>Select</option>
@@ -22,11 +23,24 @@
             <option value="contacts">Contact</option>
             <option value="careers">Careers</option>
             <option value="events">Events</option>
+            <option value="login">Application</option>
         </select> 
     </nav>
+</div>        -->
+
+
+<div class="vertical-nav" *ngIf="isSmallScreen">
+    <ul>
+        <p></p>
+        <p></p>
+        <li (click)="homepage()"><b>Home</b></li>
+        <li (click)="about()"><b>Company Overview</b></li>
+        <li (click)="contacts()"><b>Contacts</b></li>
+        <li (click)="careers()"><b>Job Postings</b></li>
+        <li (click)="events()"><b>Events</b></li>
+       <!--<li (click)="login()">Application</li>-->
+    </ul>
 </div>
-
-
 
 <br><br>
     <img class=logo src="{{ imageUrl }}" alt="My Image" width="80%" height="70">

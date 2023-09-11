@@ -1,0 +1,16 @@
+div.bd {
+    position:relative;
+    top: 100px;
+    left: 200px;
+  
+  
+  
+  }
+  table, th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid black;
+    border-collapse: collapse;
+  
+  }
+  

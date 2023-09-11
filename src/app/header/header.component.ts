@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener  } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -48,13 +48,21 @@ onOptionSelected(event: any): void {
     case 'events':
       this.events();
       break;
+    case 'login':
+      this.login();
+      break;  
     default:
       // Handle default case
       break;
   }
 }
 
+isSmallScreen: boolean = window.innerWidth < 960;
 
+@HostListener('window:resize', ['$event'])
+onResize(event: { target: { innerWidth: number; }; }) {
+  this.isSmallScreen = event.target.innerWidth < 960;
+}
 
  
 }

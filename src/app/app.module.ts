@@ -13,6 +13,9 @@ import { LoginComponent } from './login/login.component';
 import { ServiceService } from './service/service.service'; 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ThankyouComponent } from './thankyou/thankyou.component';
+import { AdminComponent } from './admin/admin.component';
+import { AdminloginComponent } from './adminlogin/adminlogin.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,9 @@ import { HttpClientModule } from '@angular/common/http';
     EventsComponent,
     ContactsComponent,
     LoginComponent,
+    ThankyouComponent,
+    AdminComponent,
+    AdminloginComponent,
  
  
  

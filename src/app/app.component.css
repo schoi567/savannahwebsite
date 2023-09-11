@@ -1,0 +1,5 @@
+@media (max-width: 960px) {
+    .container {
+        padding-left: 100px; /* equal to the width of the vertical-nav */
+    }
+}

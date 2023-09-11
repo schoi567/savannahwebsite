@@ -8,10 +8,14 @@ ul {
 /* Style the dropdown container */
 .dropdown {
   
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 30%;
+  margin-right: 40%;
   position: relative;
   display: inline-block;
+
+
+
+
 }
 
 /* Style the dropdown button */

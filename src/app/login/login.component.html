@@ -1,7 +1,7 @@
   <div class="center">
     <h1>Please fill your information</h1>
     
-    <form (ngSubmit)="Submit()">
+    <form (ngSubmit)="Submit1()">
 
 <!--
   firstname?: any;
@@ -22,20 +22,26 @@
     <div class="space2"></div>
 
     <label>Choose a department:</label>
-    <select id="department" name="department" [(ngModel)]="applicants.department">
+    <select id="department" name="department" [(ngModel)]="applicants.departments">
       <option value="Assembly">Assembly</option>
       <option value="Development">Development</option>
       <option value="Engineering">Engineering</option>
       <option value="Finance">Finance</option>
       <option value="HR">Human Resource</option>
       <option value="Injection">Injection</option>
+      <option value="IT">IT</option>
       <option value="Production">Production</option>
       <option value="PC">Production Control</option>
 
     </select>
+    
 
-    <div class="space2"></div>
-    <label class="resume">Resume:&nbsp;&nbsp;</label> <input class="bd" type="file" name="myfile" [(ngModel)]="applicants.resume" >
+
+<div class="space2"></div>
+<div class="space2"></div>
+ 
+<label for="resume">Introduction:&nbsp;&nbsp;</label>
+<textarea id="resume" rows="10" cols="50" placeholder="Please write your introduction here" name="myfile" [(ngModel)]="applicants.resume"></textarea>
    
     <div class="space2"></div>
     <div class="alert alert-danger" *ngIf='invalidform'>{{errormessage}}</div>
@@ -47,17 +53,12 @@
   <hr width="40%" color =#ADD8E6 size="3"  align="center">
 
       <input type="submit" value = "Submit" class="block">
-  
+
   
     </form>
-
-
+<br> <br>
+    <div class="alert alert-danger" *ngIf="invalidform" style="color: red;">{{errorMessage}}</div>
  
 
-
-
-
-
 </div>
-
-
+ 

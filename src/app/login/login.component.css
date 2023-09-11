@@ -54,9 +54,14 @@ label.resume {
   display: inline-block;
   width: 250px;
   text-align: right;
-  margin-left: 0%;
+  margin-left: -20%;
 }
 
 input.bd {
   margin-left: 80px;
+}
+textarea {
+  width: 100%; /* this makes sure it fills the available space */
+  padding: 10px; /* add some padding for aesthetics */
+  resize: vertical; /* allows only vertical resizing by the user */
 }

@@ -4,9 +4,7 @@
     margin-right: 20%; 
     
 }
-
  
-
 h1 {
     text-align: center;
 }
@@ -15,4 +13,19 @@ h1 {
     max-width: 90%; /* Adjust the width as needed */
     margin: 0 auto; /* Center the image horizontally */
     display: block;
+}
+
+
+@media (max-width: 600px) {
+    .facilitysite iframe {
+        width: 100%; /* Set the iframe width to 100% for smaller screens */
+        height: 100%; /* Adjust the height as needed */
+    }
+}
+
+@media (min-width: 601px) {
+    .facilitysite iframe {
+        width: 100%; /* Set the iframe width to 100% for larger screens */
+        height: 450px; /* Adjust the height as needed */
+    }
 }

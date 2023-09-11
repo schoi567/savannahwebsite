@@ -1,0 +1,35 @@
+<div class="center">
+    <h1>Please Login</h1>
+  <form (ngSubmit)="handleLogin()">
+    <input type="text" name="adminid" placeholder="Username" style="width: 750px;" [(ngModel)]="adminid">
+    <div class="space"></div>
+    <input type="password" name="password" placeholder="Password" style="width: 750px;"  [(ngModel)]="password">
+    <div class="space"></div>
+    <div class="alert alert-danger" > </div>
+  
+    <div *ngIf='invalidLogin'><p>{{errorMessage}}</p></div>
+  
+    <!--<input type="checkbox" id="chkPrint" name="Print" value = "false" (change)="myFunction()">-->
+       <!-- <label for="rememberMe">Remember me</label>-->
+  
+  
+       <div class="space"></div>
+  
+  
+      <input type="submit" value = "Log In" class="block">
+
+
+       <br><br> 
+      
+  </form>
+  
+  
+  
+  
+  
+  
+  </div>
+  
+  
+  
+ 
