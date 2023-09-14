@@ -13,6 +13,7 @@ export class CareersComponent {
   showITInfo: boolean = false;
   showProductionInfo: boolean = false;
   showHRInfo: boolean = false;
+  showGeneralAffairsInfo: boolean = false;
 
   imageUrl = 'assets/logo.png';
   talent_1 = 'assets/talent_1.png';
@@ -36,6 +37,13 @@ export class CareersComponent {
     this.showDevelopmentInfo = false;
   }, 1000); }
 
+
+  GeneralAffairs() {this.findAndScrollToWord("General Affairs"); this.showGeneralAffairsInfo= true; setTimeout(() => {
+    this.showGeneralAffairsInfo = false;
+  }, 1000); }
+
+
+
   IT() {this.findAndScrollToWord("IT"); this.showITInfo= true;  
   setTimeout(() => {
     this.showITInfo = false;
@@ -50,7 +58,7 @@ export class CareersComponent {
   }, 1000);}
 
  
-  HR() {this.findAndScrollToWord("HR"); this.showHRInfo= true;  setTimeout(() => {
+  HR() {this.findAndScrollToWord("Human Resource"); this.showHRInfo= true;  setTimeout(() => {
     this.showHRInfo = false;
   }, 1000);}
  
