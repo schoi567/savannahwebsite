@@ -35,7 +35,8 @@ export class AdminloginComponent implements OnInit {
   sessionrememberme?: any;
   errorMessage = 'Invalid Credentials';
   invalidLogin = false;
-
+  showPassword = false;
+  
   constructor(private router: Router, private serviceService: ServiceService) {}
 
   ngOnInit(): void {
@@ -106,4 +107,6 @@ export class AdminloginComponent implements OnInit {
       console.log(x);
     }
   }
+
+  
 }

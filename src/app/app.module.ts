@@ -16,6 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ThankyouComponent } from './thankyou/thankyou.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
+import { AlleventsComponent } from './allevents/allevents.component';
+import { MousvntechnicalComponent } from './mousvntechnical/mousvntechnical.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { AdminloginComponent } from './adminlogin/adminlogin.component';
     ThankyouComponent,
     AdminComponent,
     AdminloginComponent,
+    AlleventsComponent,
+    MousvntechnicalComponent,
  
  
  

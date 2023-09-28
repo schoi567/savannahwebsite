@@ -3,7 +3,13 @@ import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { ServiceService } from '../service/service.service';
 import { LoginComponent,allapplicants } from '../login/login.component';
-
+import { saveAs } from 'file-saver';
+ 
+import { retry, catchError } from 'rxjs/operators'
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse, HttpStatusCode } from '@angular/common/http';
+ 
+import { Observable, throwError } from 'rxjs';
+import { AdminloginComponent, admin, alladmin } from '../adminlogin/adminlogin.component';
  
 
 @Injectable({ providedIn: 'root' })
@@ -16,9 +22,11 @@ import { LoginComponent,allapplicants } from '../login/login.component';
 
 export class AdminComponent implements OnInit  {
   allapplicants: allapplicants[] = [];
+ 
   constructor(
     private router: Router,
-    private serviceService: ServiceService
+    private serviceService: ServiceService, 
+    private http: HttpClient
   ) {}
     getResumeUrl(resume: string | undefined): string {
       // Assuming that 'resume' is a URL or a path to the file
@@ -31,6 +39,8 @@ export class AdminComponent implements OnInit  {
       return segments.length > 0 ? segments[segments.length - 1] : 'resume.pdf';
   }
  
+
+
   /*
  
   downloadResume(resumeUrl: string | File | undefined) {
@@ -51,13 +61,70 @@ export class AdminComponent implements OnInit  {
     }
 }
 
+downloadResume(id: number) {
+  return this.http.get(`http://192.168.10.107:8080/downloadResume/${id}`, { responseType: 'blob', observe: 'response' })
+  .subscribe(response => {
+      // Get the content-disposition header to extract filename
+      const contentDisposition = response.headers.get('content-disposition') || '';
+      const matches = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/.exec(contentDisposition);
+      const filename = (matches && matches[1]) ? matches[1] : 'resume.pdf';
+      
+      // Use the saveAs function from file-saver package to save the file
+      saveAs(response.body as Blob, filename);
+
+
+  });
+
+
+
+  this.serviceService.downloadResume(id).subscribe(response => {
+    // Get the content-disposition header to extract filename
+    const contentDisposition = response.headers.get('content-disposition') || '';
+    const matches = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/.exec(contentDisposition);
+    const filename = (matches && matches[1]) ? matches[1] : 'resume.pdf';
+  
+    // Use the saveAs function from file-saver package to save the file
+    saveAs(response.body as Blob, filename);
+});
+
+
+  this.serviceService.downloadResume(id).subscribe(response => {
+        // Get the content-disposition header to extract filename
+        const contentDisposition = response.headers.get('content-disposition') || '';
+        const matches = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/.exec(contentDisposition);
+        const filename = (matches && matches[1]) ? matches[1] : 'resume.pdf';
+      
+        // Use the saveAs function from file-saver package to save the file
+        saveAs(response.body as Blob, filename);
+
+  });
+}
+
+
+
 
 */ 
+downloadFile(id: number, filename: string): void {
+  this.serviceService.downloadResume(id).subscribe(data => {
+      const blob = new Blob([data], { type: 'application/pdf' });  // assuming it's a PDF
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      filename = this.allapplicants[id].firstname + "_" + this.allapplicants[id].lastname
+      console.log(this.allapplicants[id].firstname + this.allapplicants[id].lastname)
+      link.download = filename;
+      link.click();   
+    
+    
+    });}
 
+
+    
 
  
 
     ngOnInit(): void {
+
+
       const gothrough = localStorage.getItem('gothrough');
       const gothrough1 = sessionStorage.getItem('gothrough');
   

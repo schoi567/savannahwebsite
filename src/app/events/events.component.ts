@@ -15,7 +15,7 @@ export class EventsComponent implements OnInit {
       
     console.log(bd1)
  
-    if (i === 2 || i === 3 ) { // Corrected condition to skip index 3
+    if (i === 2 || i === 3 || i === 10 ) { // Corrected condition to skip index 3
       continue;
     }
     

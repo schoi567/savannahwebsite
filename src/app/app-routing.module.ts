@@ -9,8 +9,8 @@ import { LoginComponent } from './login/login.component';
 import { ThankyouComponent } from './thankyou/thankyou.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
-
-
+import { AlleventsComponent } from './allevents/allevents.component';
+import { MousvntechnicalComponent } from './mousvntechnical/mousvntechnical.component';
 const routes: Routes = [
   { path: '',component:MainpageComponent},
   { path: 'about',component:AboutComponent},
@@ -20,7 +20,9 @@ const routes: Routes = [
   { path: 'login',component:LoginComponent},
   { path: 'thankyou',component:ThankyouComponent}, 
   { path: 'admin',component:AdminComponent}, 
-  { path: 'adminlogin',component:AdminloginComponent}
+  { path: 'adminlogin',component:AdminloginComponent},
+  { path: 'allevents',component:AlleventsComponent},
+  { path: 'svntechmou',component:MousvntechnicalComponent}
  
 ];
 

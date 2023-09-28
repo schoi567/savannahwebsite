@@ -39,12 +39,17 @@
 
 <div class="space2"></div>
 <div class="space2"></div>
+<p><b>Please attach PDF files only</b></p>
+<label class="resume-label">Resume: &nbsp; </label>
+<input type="file" name="file" placeholder="Resume"  accept=".pdf" (change)="onFileSelected($event)">
  
-<label for="resume">Introduction:&nbsp;&nbsp;</label>
+<div class="space2"></div>
+
+<!--<label for="resume">Introduction:&nbsp;&nbsp;</label>
 <textarea id="resume" rows="10" cols="50" placeholder="Please write your introduction here" name="myfile" [(ngModel)]="applicants.resume"></textarea>
    
     <div class="space2"></div>
-    <div class="alert alert-danger" *ngIf='invalidform'>{{errormessage}}</div>
+    <div class="alert alert-danger" *ngIf='invalidform'>{{errormessage}}</div>-->
 
        <div class="space2"></div>     
        <div class="space2"></div>

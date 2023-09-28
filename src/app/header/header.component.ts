@@ -23,7 +23,7 @@ contacts()
 {this.router.navigate(["/contacts"]);}
 
 events()
-{this.router.navigate(["/events"]);}
+{this.router.navigate(["/allevents"]);}
  
 login()
 {this.router.navigate(["/login"]);}

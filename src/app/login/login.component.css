@@ -65,3 +65,30 @@ textarea {
   padding: 10px; /* add some padding for aesthetics */
   resize: vertical; /* allows only vertical resizing by the user */
 }
+
+.resume-label {
+  margin-left: 50px;  /* Adjust this value as needed to position the label */
+}
+
+
+
+
+
+/* ... existing CSS ... */
+
+.container-resume {
+  display: flex;  /* using flexbox */
+  justify-content: space-between;  /* spacing out the label and input */
+}
+
+@media (max-width: 960px) {  /* this breakpoint (600px) can be adjusted as needed */
+  .resume-label {
+    margin-left: 0;  /* reset the margin on small screens */
+    flex: 1;  /* taking up available space */
+    text-align: center;  /* centering the label */
+  }
+  
+  input[name="file"] {
+    flex: 1;  /* taking up available space */
+  }
+}

@@ -17,11 +17,13 @@
             <td><p>{{applicant.firstname}}</p></td>
             <td><p>{{applicant.lastname}}</p></td>
             <td><p>{{applicant.email}}</p></td>
-            <td><p>{{applicant.resume}}</p></td>
+            <td><p> <a href="javascript:void(0)" (click)="downloadFile(applicant.id, 'resume.pdf')">Download Resume</a> </p></td>
         </tr>
     </table>
     <br><br><br>
 </div>
+
+ 
 
 <div>
 <br><br><br>
