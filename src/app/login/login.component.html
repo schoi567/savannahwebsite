@@ -32,9 +32,23 @@
       <option value="IT">IT</option>
       <option value="Production">Production</option>
       <option value="PC">Production Control</option>
+    </select>
+
+
+    <div class="space2"></div>
+    <label>How did you hear about us:</label>
+    <select id="applicationroute" name="applicationroute" [(ngModel)]="applicants.route">
+      <option value="Linkedin">Linkedin</option>
+      <option value="Indeed">Indeed</option>
+      <option value="Referral">Referral</option>
+      <option value="Recruiting Agency">Recruiting Agency</option>
+      <option value="Company Website">Company Website</option>
+      <option value="Others">Others</option>
+
 
     </select>
     
+
 
 
 <div class="space2"></div>
@@ -64,6 +78,8 @@
 <br> <br>
     <div class="alert alert-danger" *ngIf="invalidform" style="color: red;">{{errorMessage}}</div>
  
-
+   
 </div>
  
+<!--<button (click)="bd()">Click Me</button>--> 
+

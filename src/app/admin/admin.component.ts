@@ -39,6 +39,19 @@ export class AdminComponent implements OnInit  {
       return segments.length > 0 ? segments[segments.length - 1] : 'resume.pdf';
   }
  
+  deletebyid(id: number) {
+    console.log(id); 
+    this.serviceService.deleteApplicantById(id).subscribe(
+      () => {
+          console.log('Deleted successfully');
+          // Maybe refresh your data or navigate to another route
+          window.location.reload();
+      },
+      error => {
+          console.error('Error occurred:', error);
+      }
+  );
+  }
 
 
   /*
@@ -109,8 +122,14 @@ downloadFile(id: number, filename: string): void {
       const blob = new Blob([data], { type: 'application/pdf' });  // assuming it's a PDF
       const link = document.createElement('a');
       link.href = URL.createObjectURL(blob);
-      filename = this.allapplicants[id].firstname + "_" + this.allapplicants[id].lastname
-      console.log(this.allapplicants[id].firstname + this.allapplicants[id].lastname)
+      const applicant = this.allapplicants.find(app => app.id === id);
+      if (applicant) {
+          filename = `${applicant.firstname}_${applicant.lastname}`;
+          console.log(filename);
+      } else {
+        alert("The applicant does not exist");
+      }
+      
       link.download = filename;
       link.click();   
     

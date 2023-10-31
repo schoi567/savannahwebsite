@@ -19,9 +19,10 @@ export class ServiceService {
   constructor(private http: HttpClient) { }
 
   downloadResume(id: number): Observable<Blob> {
-    return this.http.get<Blob>(`http://192.168.10.107:8080/downloadResume/${id}`, { responseType: 'blob' as 'json' });
+   return this.http.get<Blob>(`http://sesweb3.eba-zahnmttg.us-east-1.elasticbeanstalk.com/downloadResume/${id}`, { responseType: 'blob' as 'json' });
+    // return this.http.get<Blob>(`http://localhost:8080/downloadResume/${id}`, { responseType: 'blob' as 'json' });
   }
-
+ 
  
 
 
@@ -30,19 +31,35 @@ export class ServiceService {
     formData.append('firstname', applicantData.firstname!);
     formData.append('lastname', applicantData.lastname!);
     formData.append('email', applicantData.email!);
+    formData.append('route', applicantData.route!);
     formData.append('department', applicantData.departments!);
     if (file) {
       formData.append('resume', file, file.name);
     }
 
-    return this.http.post(`http://192.168.10.107:8080/applicants`, formData);
+   return this.http.post(`http://sesweb3.eba-zahnmttg.us-east-1.elasticbeanstalk.com/applicants`, formData);
+     //  return this.http.post(`http://localhost:8080/applicants`, formData);
+  
+  
   }
 
+ 
+
   retrieveadmininfo(): Observable<alladmin[]> {
-    return this.http.get<alladmin[]>(`http://192.168.10.107:8080/admin`)
+   return this.http.get<alladmin[]>(`http://sesweb3.eba-zahnmttg.us-east-1.elasticbeanstalk.com/admin`)
+
+   //    return this.http.get<alladmin[]>(`http://localhost:8080/admin`)
+
   }
 
   retrieveapplicantsinfo(): Observable<allapplicants[]> {
-    return this.http.get<allapplicants[]>(`http://192.168.10.107:8080/allapplicants`)
+  return this.http.get<allapplicants[]>(`http://sesweb3.eba-zahnmttg.us-east-1.elasticbeanstalk.com/allapplicants`)
+
+  //return this.http.get<allapplicants[]>(`http://localhost:8080/allapplicants`)
   }
+ 
+  deleteApplicantById(id: number): Observable<void> {
+    //  return this.http.get<void>(`http://localhost:8080/app/${id}`);
+    return this.http.get<void>(`http://sesweb3.eba-zahnmttg.us-east-1.elasticbeanstalk.com/app/${id}`);
+}
 }

@@ -1,31 +1,36 @@
-<p> 
-    <button (click)="Logout()" type="button">Logout</button><br>
-</p>
+
 
 <div class="bd">
     <table>
         <tr>
+            <th scope="col">Id</th>
             <th scope="col">Department</th>
             <th scope="col">Firstname</th>
             <th scope="col">Lastname</th>
             <th scope="col">E-mail</th>
             <th scope="col">Resume</th>
+            <th scope="col">Option</th>
         </tr>
         
         <tr *ngFor="let applicant of allapplicants">
+            <td><p>{{applicant.id}}</p></td>
             <td><p>{{applicant.departments}}</p></td>
             <td><p>{{applicant.firstname}}</p></td>
             <td><p>{{applicant.lastname}}</p></td>
             <td><p>{{applicant.email}}</p></td>
             <td><p> <a href="javascript:void(0)" (click)="downloadFile(applicant.id, 'resume.pdf')">Download Resume</a> </p></td>
+            <td><button (click)="deletebyid(applicant.id)" >Delete</button></td>
         </tr>
     </table>
     <br><br><br>
+
 </div>
 
- 
 
-<div>
-<br><br><br>
-<br><br><br>
-</div> 
+<div class="bd1">
+ 
+    <button (click)="Logout()" type="button">Logout</button><br>
+
+</div>
+ 
+ 
